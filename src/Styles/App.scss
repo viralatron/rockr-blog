@@ -1,0 +1,13 @@
+$cinza: #2d2d2d;
+$amarelo: #f1a10a;
+$branco: #fff;
+:root {
+  font-size: 16px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+@import "Menu.scss";
+.App {
+  font-family: "Rubik", sans-serif;
+  background-color: linear-gradient(90deg, #f1a10a 0%, #342303 100%);
+}
