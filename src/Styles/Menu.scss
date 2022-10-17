@@ -1,5 +1,5 @@
 .menu {
-  height: 100px;
+  height: 6.25rem;
   background-color: $cinza;
   display: flex;
   width: 100vw;
@@ -9,9 +9,10 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  padding: 0px;
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   &__title {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
     font-weight: 700;
   }
   &__link {
@@ -19,9 +20,24 @@
     font-size: 2rem;
     &s {
       display: flex;
+      width: 130px;
       list-style: none;
-      min-width: 336px;
       justify-content: space-around;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .menu {
+    justify-content: space-around;
+    &__title {
+      font-size: 2.25rem;
+    }
+    &__link {
+      font-size: 2rem;
+      &s {
+        min-width: 336px;
+      }
     }
   }
 }
