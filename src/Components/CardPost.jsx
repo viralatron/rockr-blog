@@ -1,4 +1,4 @@
-const BlogPost = ({
+const CardPost = ({
   id,
   author,
   authorEmail,
@@ -7,21 +7,22 @@ const BlogPost = ({
   date,
   imageUrl,
   itemNmbr,
+  openArticle,
 }) => {
   const headlineText =
     article.replace(/(<([^>]+)>)/gi, "").slice(0, 121) + " ...";
   const headlineTitle = title.slice(0, 21) + "...";
-  let postClass = "post";
+  let cardClass = "card";
 
   if ((itemNmbr + 1) % 3 === 0) {
-    postClass += " post--big";
+    cardClass += " card--big";
   }
   if ((itemNmbr - (itemNmbr % 3)) % 2 === 1) {
-    postClass += " post--reverse";
+    cardClass += " card--reverse";
   }
   return (
-    <div className={postClass} key={id}>
-      <img src={imageUrl} alt={title} className="post__image" />
+    <div className={cardClass} key={id} onClick={() => openArticle(id)}>
+      <img src={imageUrl} alt={title} className="card__image" />
       <div className="details">
         <small className="details__author">{author}</small>
         <h2 className="details__title">{headlineTitle}</h2>
@@ -36,4 +37,4 @@ const BlogPost = ({
   );
 };
 
-export default BlogPost;
+export default CardPost;

@@ -1,14 +1,8 @@
 import Blog from "./Components/Blog";
-import Menu from "./Components/Menu";
 import "./Styles/App.scss";
 
 function App() {
-  return (
-    <div className="App">
-      <Menu />
-      <Blog />
-    </div>
-  );
+  return <Blog />;
 }
 
 export default App;

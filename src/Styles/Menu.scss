@@ -35,6 +35,10 @@
     }
     &__link {
       font-size: 2rem;
+      a {
+        color: $branco;
+        text-decoration: none;
+      }
       &s {
         min-width: 336px;
       }

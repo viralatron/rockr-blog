@@ -2,8 +2,11 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  &--single {
+    justify-content: center;
+  }
 }
-.post {
+.card {
   margin-top: 5rem;
   width: 100vw;
   display: flex;
@@ -37,20 +40,20 @@
   }
 }
 @media screen and (min-width: 1920px) {
-  .post {
+  .card {
     width: calc(50vw - 9px);
     height: 320px;
     &__image {
       height: 100%;
       width: auto;
     }
-    &.post--big {
+    &.card--big {
       width: calc(100vw / 3 * 2);
       height: 640px;
       .details {
         padding: 162px 80px;
       }
-      &:not(.post--reverse) {
+      &:not(.card--reverse) {
         margin-left: calc(100vw / 3);
       }
     }

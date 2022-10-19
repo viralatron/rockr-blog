@@ -1,0 +1,54 @@
+.post {
+  background-color: $branco;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  &__image {
+    width: 40vw;
+  }
+  .details {
+    width: 55vw;
+    position: relative;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &__date {
+      font-size: 1.125rem;
+    }
+  }
+  &__text {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .post {
+    width: calc((100vw / 3) * 2);
+    &__image {
+      width: 50%;
+    }
+    .details {
+      width: calc(50% - 6rem);
+      height: 14.75rem;
+      margin: 7.625rem 3rem;
+      &__title {
+        margin: 0;
+      }
+    }
+    &__text {
+      margin: 7.75rem 15.625rem;
+    }
+  }
+}
+@media screen and (min-width: 1920px) {
+  .post {
+    .details {
+      width: calc(50% - 15rem);
+      height: 14.75rem;
+      margin: 12.625rem 7.5rem;
+    }
+  }
+}
