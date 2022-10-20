@@ -1,8 +1,8 @@
 .menu {
+  z-index: 3;
   height: 6.25rem;
   background-color: $cinza;
   display: flex;
-  width: 100vw;
   font-family: "Rubik";
   color: $branco;
   margin: 0px;
@@ -18,6 +18,10 @@
   &__link {
     font-weight: 500;
     font-size: 2rem;
+    a {
+      color: $branco;
+      text-decoration: none;
+    }
     &s {
       display: flex;
       width: 130px;
@@ -33,15 +37,8 @@
     &__title {
       font-size: 2.25rem;
     }
-    &__link {
-      font-size: 2rem;
-      a {
-        color: $branco;
-        text-decoration: none;
-      }
-      &s {
-        min-width: 336px;
-      }
+    &__links {
+      min-width: 336px;
     }
   }
 }

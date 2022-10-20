@@ -17,6 +17,15 @@ body {
 @import "Menu.scss";
 @import "Cards.scss";
 @import "Post.scss";
+@import "Contact.scss";
 .App {
   font-family: "Rubik", sans-serif;
+  &--blocked {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    top: 0px;
+    background: rgba(0, 0, 0, 0.6);
+    position: fixed;
+  }
 }

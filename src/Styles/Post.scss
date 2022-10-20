@@ -1,6 +1,5 @@
 .post {
   background-color: $branco;
-
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,6 +21,15 @@
   }
   &__text {
     font-size: 1.5rem;
+    margin: 3.75rem;
+    p {
+      &:first-of-type {
+        margin-top: 0px;
+      }
+      &:last-of-type {
+        margin-bottom: 0px;
+      }
+    }
   }
 }
 @media screen and (min-width: 1440px) {

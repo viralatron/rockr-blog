@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Article from "./Article";
 import CardPost from "./CardPost";
+import Contact from "./Contact";
 import Menu from "./Menu";
 
 const Blog = () => {
@@ -16,6 +17,9 @@ const Blog = () => {
   const [article, setArticle] = useState({
     data: {},
     isOpen: false,
+  });
+  const [contact, setContact] = useState({
+    open: false,
   });
 
   const loadingRef = useRef(null);
@@ -61,10 +65,12 @@ const Blog = () => {
     threshold: 1.0,
   };
   const openContact = () => {
-    console.log("abrir tela de contato");
+    setContact({ open: true });
+  };
+  const contactClose = () => {
+    setContact({ open: false });
   };
   const showPosts = () => {
-    console.log("abrir tela de posts");
     setArticle({
       data: {},
       isOpen: false,
@@ -82,6 +88,8 @@ const Blog = () => {
   return (
     <div className="App">
       <Menu showPosts={showPosts} openContact={openContact} />
+      <Contact open={contact.open} contactClose={contactClose} />
+      {contact.open && <div className="App--blocked" />}
       {article.isOpen && (
         <main className="blog blog--single">
           {article.isOpen && <Article {...article.data} />}
