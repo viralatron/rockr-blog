@@ -11,7 +11,10 @@ const CardPost = ({
 }) => {
   const headlineText =
     article.replace(/(<([^>]+)>)/gi, "").slice(0, 121) + " ...";
-  const headlineTitle = title.slice(0, 21) + "...";
+  const headlineTitle =
+    title.replace(/(<([^>]+)>)/gi, "").length > 21
+      ? title.replace(/(<([^>]+)>)/gi, "").slice(0, 21) + "..."
+      : title.replace(/(<([^>]+)>)/gi, "");
   let cardClass = "card";
 
   if ((itemNmbr + 1) % 3 === 0) {
