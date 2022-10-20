@@ -52,12 +52,14 @@ const Blog = () => {
     }
   };
 
-  const openArticle = (id) => {
-    const data = blogOptions.posts.find((el) => el.id === id);
+  const openArticle = async (id) => {
+    const getData = await fetch(`${baseUrl}articles/${id}`);
+    const response = await getData.json();
     setArticle({
-      data,
+      data: response,
       isOpen: true,
     });
+    console.log(response, article);
   };
   const options = {
     root: null,
