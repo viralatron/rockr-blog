@@ -43,7 +43,7 @@
 }
 @media screen and (min-width: 1440px) {
   .card {
-    width: calc(50vw - 9px);
+    width: 50vw;
     height: 320px;
     &__image {
       height: 100%;
