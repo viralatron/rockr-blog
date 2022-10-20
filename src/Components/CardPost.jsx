@@ -24,7 +24,7 @@ const CardPost = ({
     cardClass += " card--reverse";
   }
   return (
-    <div className={cardClass} key={id} onClick={() => openArticle(id)}>
+    <div className={cardClass} onClick={() => openArticle(id)}>
       <img src={imageUrl} alt={title} className="card__image" />
       <div className="details">
         <small className="details__author">{author}</small>

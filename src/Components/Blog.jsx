@@ -12,7 +12,6 @@ const Blog = () => {
     loading: false,
     posts: [],
     page: 0,
-    tick: 0,
   });
   const [article, setArticle] = useState({
     data: {},
@@ -59,7 +58,6 @@ const Blog = () => {
       data: response,
       isOpen: true,
     });
-    console.log(response, article);
   };
   const options = {
     root: null,
