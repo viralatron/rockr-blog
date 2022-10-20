@@ -50,9 +50,12 @@ const Contact = ({ open, contactClose }) => {
           placeholder="Hello..."
           className="form__input"
         />
-        <button type="button" className="form__submit">
-          Submit
-        </button>
+        <div className="form--center">
+          <button type="button" className="form__submit">
+            <img src={process.env.PUBLIC_URL + "/icon-submit.png"} />
+            Submit
+          </button>
+        </div>
       </form>
     </dialog>
   );

@@ -3,6 +3,9 @@
   height: 6.25rem;
   background-color: $cinza;
   display: flex;
+  position: fixed;
+  top: 0px;
+  width: 100vw;
   font-family: "Rubik";
   color: $branco;
   margin: 0px;
@@ -24,7 +27,7 @@
     }
     &s {
       display: flex;
-      width: 130px;
+      width: 8.125rem;
       list-style: none;
       justify-content: space-around;
     }
