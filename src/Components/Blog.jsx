@@ -6,7 +6,7 @@ import Menu from "./Menu";
 
 const Blog = () => {
   const baseUrl = "https://stormy-shelf-93141.herokuapp.com/";
-  const artLimit = 3;
+  const artLimit = 9;
 
   const [blogOptions, setOptions] = useState({
     loading: false,
@@ -23,7 +23,6 @@ const Blog = () => {
 
   const loadingRef = useRef(null);
   const fetchData = async (page) => {
-    setOptions((blogOptions) => ({ ...blogOptions, loading: true }));
     const getData = await fetch(
       `${baseUrl}articles?_page=${page}&_limit=${artLimit}`
     );
@@ -44,10 +43,8 @@ const Blog = () => {
   const handleObserver = (entities) => {
     const target = entities[0];
 
-    if (target.isIntersecting && !blogOptions.loading) {
-      fetchData(blogOptions.page);
-      const nextPage = blogOptions.page + 1;
-      setOptions({ ...blogOptions, page: nextPage });
+    if (target.isIntersecting) {
+      setOptions((blogOptions) => ({ ...blogOptions, loading: true }));
     }
   };
 
@@ -61,7 +58,7 @@ const Blog = () => {
   };
   const options = {
     root: null,
-    rootMargin: "0px",
+    rootMargin: "200px",
     threshold: 1.0,
   };
   const openContact = () => {
@@ -85,6 +82,14 @@ const Blog = () => {
     };
   }, [options, loadingRef]);
 
+  useEffect(() => {
+    if (blogOptions.loading) {
+      fetchData(blogOptions.page);
+      const nextPage = blogOptions.page + 1;
+      setOptions({ ...blogOptions, page: nextPage });
+    }
+  }, [blogOptions.loading]);
+
   return (
     <div className="App">
       <Menu showPosts={showPosts} openContact={openContact} />
@@ -105,9 +110,7 @@ const Blog = () => {
               {...blogOptions.posts[key]}
             />
           ))}
-          <div ref={loadingRef}>
-            <span>Carregando...</span>
-          </div>
+          <div ref={loadingRef}></div>
         </main>
       )}
     </div>
