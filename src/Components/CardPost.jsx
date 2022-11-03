@@ -1,10 +1,8 @@
 const CardPost = ({
   id,
   author,
-  authorEmail,
   title,
   article,
-  date,
   imageUrl,
   itemNmbr,
   openArticle,

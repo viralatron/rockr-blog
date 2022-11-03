@@ -1,12 +1,4 @@
-const Article = ({
-  id,
-  author,
-  authorEmail,
-  title,
-  article,
-  date,
-  imageUrl,
-}) => {
+const Article = ({ author, title, article, date, imageUrl }) => {
   const artTitle = title.replace(/(<([^>]+)>)/gi, "");
   const dateLoc = new Date(date);
   const options = { year: "numeric", month: "short", day: "numeric" };
