@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="menu__button-svg" fill="currentColor" viewBox="0 0 48 48">
+
+    <path
+        d="m6,15v-3h36v3z"
+        id="bottom" />
+    <path
+        d="m6,25.5v-3h36v3z"
+        id="middle" />
+    <path
+        d="m6,36v-3h36v3z"
+        id="top" />
+</svg>
