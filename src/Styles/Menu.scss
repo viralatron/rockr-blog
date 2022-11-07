@@ -1,0 +1,119 @@
+.menu {
+  z-index: 3;
+  height: 6.25rem;
+  background-color: $cinza;
+  display: flex;
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  font-family: "Rubik";
+  color: $branco;
+  margin: 0px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 0px 2rem;
+  box-sizing: border-box;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  &__title {
+    font-size: 1.75rem;
+    width: 100%;
+    font-weight: 700;
+  }
+  &__link {
+    font-weight: 500;
+    font-size: 2rem;
+    margin-top: 10vh;
+    a {
+      color: $branco;
+      text-decoration: none;
+    }
+    &s {
+      flex-direction: column;
+      list-style: none;
+      justify-content: space-around;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 70vw;
+      height: 100vh;
+      transform: translateX(100vw);
+      transition: all 0.2s ease-in-out;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      background-color: $cinza;
+      &.open {
+        transform: translateX(0vw);
+        transition: all 0.2s ease-in-out;
+        z-index: 4;
+      }
+    }
+  }
+  &__button {
+    height: 4.375rem;
+    min-width: 4.375rem;
+    box-sizing: border-box;
+    border: 0;
+    background-color: $cinza;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+    &-svg {
+      color: $branco;
+      #top,
+      #middle,
+      #bottom {
+        transition: all 0.2s ease-in-out;
+      }
+    }
+    &.close {
+      #top {
+        transition: all 0.2s ease-in-out;
+        transform: rotate(45deg) translateY(-35px) translateX(10px);
+      }
+      #middle {
+        transition: all 0.2s ease-in-out;
+        transform: rotate(-45deg) translateY(9.5px) translateX(-25px);
+      }
+      #bottom {
+        transition: all 0.2s ease-in-out;
+        transform: rotate(-45deg) translateY(20px) translateX(-25px);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .menu {
+    justify-content: space-around;
+    &__button {
+      display: none;
+    }
+    &__link {
+      margin-top: inherit;
+      &s {
+        display: flex;
+        transition: none;
+        transform: none;
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+        width: 20rem;
+        transform: translateX(0vw);
+        .open {
+          transition: none;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1920px) {
+  .menu {
+    justify-content: space-around;
+    &__title {
+      font-size: 2.25rem;
+    }
+  }
+}

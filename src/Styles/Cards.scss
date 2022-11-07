@@ -1,0 +1,92 @@
+.blog {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  margin-top: 12.5rem;
+  &--single {
+    justify-content: center;
+  }
+}
+.card {
+  margin-bottom: 5rem;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  background-color: $branco;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+  &__image {
+    width: calc(100vw / 3);
+    height: calc(100vw / 3);
+  }
+  &.post--reverse {
+    flex-direction: row-reverse;
+  }
+}
+.details {
+  padding: 10px 16px;
+  position: relative;
+  &__author,
+  &__headtext {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: $cinza;
+  }
+  &__title {
+    color: $amarelo;
+    font-size: 2.25rem;
+    font-weight: 700;
+  }
+  &__readmore {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .details {
+    &__headtext {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 440px) {
+  .card {
+    height: calc(100vw / 3);
+    overflow: hidden;
+  }
+  .details {
+    &__headtext {
+      max-height: 40%;
+      overflow: hidden;
+    }
+  }
+}
+@media screen and (min-width: 1440px) {
+  .card {
+    width: 50%;
+    height: 320px;
+    &__image {
+      height: 100%;
+      width: auto;
+    }
+    &.card--big {
+      width: calc(100vw / 3 * 2);
+      height: 640px;
+      .details {
+        padding: 162px 80px;
+      }
+      &:not(.card--reverse) {
+        margin-left: calc(100vw / 3);
+      }
+    }
+  }
+  .details {
+    padding: 2.188rem 5rem;
+    &__readmore {
+      position: absolute;
+      display: block;
+      bottom: 2.5rem;
+      right: 2.5rem;
+    }
+  }
+}
