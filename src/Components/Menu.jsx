@@ -4,10 +4,11 @@ const Menu = ({ showPosts, openContact }) => {
   const [menuOpen, setMenu] = useState(false);
 
   const menuClass = menuOpen ? "menu__links open" : "menu__links";
-  const buttonClass = !menuOpen ? "menu__button close" : "menu__button";
+  const buttonClass = menuOpen ? "menu__button close" : "menu__button";
   const toggleMenu = () => {
     setMenu(!menuOpen);
   };
+
   return (
     <menu className="menu">
       <h1 className="menu__title">Rockr Blog</h1>

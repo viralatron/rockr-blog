@@ -37,14 +37,14 @@
       right: 0;
       width: 70vw;
       height: 100vh;
-      transform: translateX(0vw);
+      transform: translateX(100vw);
       transition: all 0.2s ease-in-out;
       display: flex;
       align-items: center;
       justify-content: flex-start;
       background-color: $cinza;
       &.open {
-        transform: translateX(100vw);
+        transform: translateX(0vw);
         transition: all 0.2s ease-in-out;
         z-index: 4;
       }
@@ -84,14 +84,36 @@
   }
 }
 
+@media screen and (min-width: 768px) {
+  .menu {
+    justify-content: space-around;
+    &__button {
+      display: none;
+    }
+    &__link {
+      margin-top: inherit;
+      &s {
+        display: flex;
+        transition: none;
+        transform: none;
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+        height: 100%;
+        width: 20rem;
+        transform: translateX(0vw);
+        .open {
+          transition: none;
+        }
+      }
+    }
+  }
+}
 @media screen and (min-width: 1920px) {
   .menu {
     justify-content: space-around;
     &__title {
       font-size: 2.25rem;
-    }
-    &__links {
-      min-width: 8.125rem;
     }
   }
 }
