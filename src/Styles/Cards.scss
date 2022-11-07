@@ -17,7 +17,7 @@
   box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
   &__image {
     width: calc(100vw / 3);
-    height: auto;
+    height: calc(100vw / 3);
   }
   &.post--reverse {
     flex-direction: row-reverse;
@@ -41,9 +41,29 @@
     display: none;
   }
 }
+
+@media screen and (max-width: 375px) {
+  .details {
+    &__headtext {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 440px) {
+  .card {
+    height: calc(100vw / 3);
+    overflow: hidden;
+  }
+  .details {
+    &__headtext {
+      max-height: 40%;
+      overflow: hidden;
+    }
+  }
+}
 @media screen and (min-width: 1440px) {
   .card {
-    width: 50vw;
+    width: 50%;
     height: 320px;
     &__image {
       height: 100%;
